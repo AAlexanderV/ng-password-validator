@@ -8,44 +8,17 @@
     </label>
   </form>
 
-  <p>Value: {{ password }}</p>
-
-  <!-- <div class="indicators_container">
-    <div class="strength_indicator" [style]="'background: '+indicatorsColor[0]"></div>
-    <div class="strength_indicator" [style]="'background: '+indicatorsColor[1]"></div>
-    <div class="strength_indicator" [style]="'background: '+indicatorsColor[2]"></div>
-  </div> -->
-
-  <div class="indicators_container">
-
-    <div [ngSwitch]="passwordStatus">
-      <div *ngSwitchDefault class="strength_indicator" style="background: silver"></div>
-      <div *ngSwitchCase="'empty'" class="strength_indicator" style="background: silver"></div>
-      <div *ngSwitchCase="'short'" class="strength_indicator" style="background: red"></div>
-      <div *ngSwitchCase="'strong'" class="strength_indicator" style="background: lime"></div>
-      <div *ngSwitchCase="'medium'" class="strength_indicator" style="background: yellow"></div>
-      <div *ngSwitchCase="'low'" class="strength_indicator" style="background: red"></div>
-    </div>
-
-
-    <div [ngSwitch]="passwordStatus">
-      <div *ngSwitchDefault class="strength_indicator" style="background: silver"></div>
-      <div *ngSwitchCase="'empty'" class="strength_indicator" style="background: silver"></div>
-      <div *ngSwitchCase="'short'" class="strength_indicator" style="background: red"></div>
-      <div *ngSwitchCase="'strong'" class="strength_indicator" style="background: lime"></div>
-      <div *ngSwitchCase="'medium'" class="strength_indicator" style="background: yellow"></div>
-      <div *ngSwitchCase="'low'" class="strength_indicator" style="background: silver"></div>
-    </div>
-
-    <div [ngSwitch]="passwordStatus">
-      <div *ngSwitchDefault class="strength_indicator" style="background: silver"></div>
-      <div *ngSwitchCase="'empty'" class="strength_indicator" style="background: silver"></div>
-      <div *ngSwitchCase="'short'" class="strength_indicator" style="background: red"></div>
-      <div *ngSwitchCase="'strong'" class="strength_indicator" style="background: lime"></div>
-      <div *ngSwitchCase="'medium'" class="strength_indicator" style="background: silver"></div>
-      <div *ngSwitchCase="'low'" class="strength_indicator" style="background: silver"></div>
-    </div>
-
+  <div [ngSwitch]="passwordStatus">
+    <p *ngSwitchDefault [style]="'color: ' + indicatorsColor[0]">It's empty</p>
+    <p *ngSwitchCase="'short'" [style]="'color: ' + indicatorsColor[0]">Password length should be at least 8</p>
+    <p *ngSwitchCase="'low'" [style]="'color: ' + indicatorsColor[0]">Weak password </p>
+    <p *ngSwitchCase="'medium'" style="color: rgb(231, 231, 63)">It's medium, you're close 😀</p>
+    <p *ngSwitchCase="'strong'" [style]="'color: ' + indicatorsColor[0]">Now it's finally strong 👏</p>
   </div>
 
+  <div class="indicators_container">
+    <div class="strength_indicator" [style]="'background: ' + indicatorsColor[0]"></div>
+    <div class="strength_indicator" [style]="'background: ' + indicatorsColor[1]"></div>
+    <div class="strength_indicator" [style]="'background: ' + indicatorsColor[2]"></div>
+  </div>
 </div>

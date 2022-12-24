@@ -12,13 +12,21 @@ h1{
     margin-bottom: 0;
 }
 
+p{
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
 form{
     margin: 10px 0;
-    width: 80%;
+    width: 70%;
 }
 
 input{
     width: 100%;
+    height: 35px;
+    padding-left: 10px;
 }
 
 .indicators_container{
@@ -29,14 +37,8 @@ input{
     justify-content: space-evenly;
 }
 
-.indicators_container div{
-    width: 30%;
-    height: 12px;
-
-}
-
 .indicators_container .strength_indicator{
-    width: 100%;
+    width: 30%;
     height: 12px;
     border-radius: 10px;
 }
